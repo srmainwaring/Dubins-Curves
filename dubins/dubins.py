@@ -408,11 +408,9 @@ def dubins_extract_subpath(path, t):
     newpath.type = path.type
 
     # fix the parameters
-    newpath.param[0] = math.fmin(path.param[0], tprime)
-    newpath.param[1] = math.fmin(path.param[1], tprime - newpath.param[0])
-    newpath.param[2] = math.fmin(
-        path.param[2], tprime - newpath.param[0] - newpath.param[1]
-    )
+    newpath.param[0] = min(path.param[0], tprime)
+    newpath.param[1] = min(path.param[1], tprime - newpath.param[0])
+    newpath.param[2] = min(path.param[2], tprime - newpath.param[0] - newpath.param[1])
     return EDUBOK, newpath
 
 
