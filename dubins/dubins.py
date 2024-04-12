@@ -28,10 +28,10 @@ THE SOFTWARE.
 
 import math
 
-from enum import Enum
+from enum import IntEnum
 
 
-class DubinsPathType(Enum):
+class DubinsPathType(IntEnum):
     LSL = 0
     LSR = 1
     RSL = 2
@@ -63,7 +63,7 @@ EPSILON = 10.0e-10
 INFINITY = math.inf
 
 
-class SegmentType(Enum):
+class SegmentType(IntEnum):
     L_SEG = 0
     S_SEG = 1
     R_SEG = 2
