@@ -82,15 +82,15 @@ DIRDATA = [
 
 class DubinsIntermediateResults:
     def __init__(self):
-        self.alpha
-        self.beta
-        self.d
-        self.sa
-        self.sb
-        self.ca
-        self.cb
-        self.c_ab
-        self.d_sq
+        self.alpha = 0.0
+        self.beta = 0.0
+        self.d = 0.0
+        self.sa = 0.0
+        self.sb = 0.0
+        self.ca = 0.0
+        self.cb = 0.0
+        self.c_ab = 0.0
+        self.d_sq = 0.0
 
 
 # double fmodr( double x, double y)
