@@ -260,7 +260,21 @@ def test_extract_subpath(dubins_config):
     assert qsamp[2] == approx(0.0)
 
 
-if __name__ == "__main__":
-    dubins_config = DubinsConfig()
-    dubins_config.setup()
-    test_path_type(dubins_config)
+def test_extract_invalid_subpath(dubins_config):
+    dubins_config.configure_inputs(0.0, 0.0, 4.0)
+    q0 = dubins_config.q0
+    q1 = dubins_config.q1
+    turning_radius = dubins_config.turning_radius
+
+    # find the parameters for a single Dubins word
+    err, path = dubins_path(q0, q1, turning_radius, DubinsPathType.LSL)
+    assert err == EDUBOK
+
+    err, subpath = dubins_extract_subpath(path, 8.0)
+    assert err != EDUBOK
+
+
+# if __name__ == "__main__":
+#     dubins_config = DubinsConfig()
+#     dubins_config.setup()
+#     test_path_type(dubins_config)
