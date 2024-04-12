@@ -398,7 +398,7 @@ def dubins_extract_subpath(path, t):
     tprime = t / path.rho
 
     if (t < 0) or (t > dubins_path_length(path)):
-        return EDUBPARAM
+        return EDUBPARAM, newpath
 
     # copy most of the data
     newpath.qi[0] = path.qi[0]
