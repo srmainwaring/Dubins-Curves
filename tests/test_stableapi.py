@@ -1,5 +1,7 @@
 """
 Tests for the Python implementation of Dubins curves.
+
+Adapted from tests/stableapi_tests.cpp
 """
 
 import math
